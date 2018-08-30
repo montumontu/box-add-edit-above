@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Box = require('./box');
 
-mongoose.connect('mongodb://nayan:<password>@ds119651.mlab.com:19651/shop', { useNewUrlParser: true });
+mongoose.connect('mongodb://nayan:08kitunayan@ds119651.mlab.com:19651/shop', { useNewUrlParser: true });
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}));
