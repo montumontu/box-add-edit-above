@@ -27,9 +27,9 @@ export class NewBoxComponent implements OnInit {
     });
   }
   close(boxId: number) {
-    this.boxService.deleteBoxes(boxId).subscribe(data => {
+    this.boxService.deleteBoxes(boxId).then(data => {
+      console.log('deleted');
     });
-    console.log('deleted');
   }
 
 

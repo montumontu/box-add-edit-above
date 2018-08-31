@@ -50,15 +50,22 @@ export class BoxService {
       );
     });
   }
-  deleteBoxes(boxId): Observable<Box> {
-    console.log(boxId, 'check');
-    const body = JSON.stringify(boxId);
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
-      })
-    };
-    return this._http.delete<Box>(this.ROOT_URL + '/box/' + boxId);
+  deleteBoxes(boxId) {
+      return new Promise((res, rej) => {
+      console.log(boxId, 'check');
+      const body = JSON.stringify(boxId);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'my-auth-token'
+        })
+      };
+      return this._http.delete(this.ROOT_URL + '/box/' + boxId).subscribe(
+        (data: any) => {
+          console.log(data);
+          console.log('In service deleted');
+          res(data);
+        };
+    });
   }
 }
