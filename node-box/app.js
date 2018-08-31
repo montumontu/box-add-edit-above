@@ -96,10 +96,6 @@ app.delete('/box/:boxId', (req, res, next) => {
         console.log('Inside catch');
         res.status(500).json({error:err})
     });
-    res.status(201).json({
-        message: 'Deleted Box',
-        id:id
-    });
 });
 
 app.use((req, res, next) => {

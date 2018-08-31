@@ -51,7 +51,7 @@ export class BoxService {
     });
   }
   deleteBoxes(boxId) {
-      return new Promise((res, rej) => {
+    return new Promise((res, rej) => {
       console.log(boxId, 'check');
       const body = JSON.stringify(boxId);
       const httpOptions = {
@@ -66,6 +66,7 @@ export class BoxService {
           console.log('In service deleted');
           res(data);
         };
+      );
     });
   }
 }
