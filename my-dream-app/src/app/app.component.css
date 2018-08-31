@@ -1,0 +1,13 @@
+#boxes {
+    background-color:lightblue;
+    height: 150px;
+}
+
+#add-box {
+    background-color:sandybrown;
+    height: 150px;
+}
+
+#add-box button {
+    margin: 54px
+}

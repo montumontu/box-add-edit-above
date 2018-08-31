@@ -26,7 +26,6 @@ export class BoxService {
       };
       return this._http.post<Box>(this.ROOT_URL + '/box', body, httpOptions).subscribe(
         (data: any) => {
-          console.log(data);
           res(data);
         }
       );
@@ -44,7 +43,6 @@ export class BoxService {
       };
       return this._http.patch<Box>(this.ROOT_URL + '/box', body, httpOptions).subscribe(
         (data: any) => {
-          console.log(data);
           res(data);
         }
       );
@@ -52,21 +50,10 @@ export class BoxService {
   }
   deleteBoxes(boxId) {
     return new Promise((res, rej) => {
-      console.log(boxId, 'check');
-      const body = JSON.stringify(boxId);
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          'Authorization': 'my-auth-token'
-        })
-      };
       return this._http.delete(this.ROOT_URL + '/box/' + boxId).subscribe(
         (data: any) => {
-          console.log(data);
-          console.log('In service deleted');
           res(data);
-        };
-      );
+        });
     });
   }
 }

@@ -2,8 +2,8 @@
     <button  type="button" [hidden]="myVar" (click)="close(boxI.boxId)" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
     </button>
-    <label for="box" [hidden]="myVar" class="font-weight-bold" style="color: #fff;margin: 50px 0 5px 33%">{{boxI.boxTag}}</label>
-    <button type="button" [hidden]="myVar" (click)="edit()" class="btn btn-success font-weight-bold" style="margin-left: 20px; padding: 10px 50px;">Edit</button>
-    <input type="text" [hidden]="!myVar" class="form-control" style="margin-top: 82px;" id="box" name="box" (keyup.enter)="addText(box.value,boxI.boxId)" #box>
+    <label for="box" id="tag-name" [hidden]="myVar" class="font-weight-bold">{{boxI.boxTag}}</label>
+    <button type="button" id="edit-button" [hidden]="myVar" (click)="edit()" class="btn btn-success font-weight-bold" >Edit</button>
+    <input type="text" [hidden]="!myVar" class="form-control edit-text" id="box" name="box" (keyup.enter)="addText(box.value,boxI.boxId)" #box>
   </div>
 

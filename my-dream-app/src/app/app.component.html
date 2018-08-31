@@ -4,23 +4,12 @@
       </nav>
     <form>
       <div class="row">
-        <div style="background-color:lightblue; height: 150px; " class="ml-2 mt-2 col-3 col-md-3 col-lg-2" >
-          <button type="button" (click)="close()" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-          <div class="form-group">
-            <label for="box" class="font-weight-bold" style="color: #fff;margin: 50px 0 5px 33%">Tag 1</label>
-            <input type="text" class="form-control" id="box" name="box" (keyup.enter)="addGears(box.value)" #box> 
-          </div>
-        </div>
-            <div style="background-color:lightblue; height: 150px; " class="ml-2 col-3 col-md-3 col-lg-2 mt-2" *ngFor=" let box of boxes">
+            <div id='boxes' class="ml-2 col-3 col-md-3 col-lg-2 mt-2" *ngFor=" let box of boxes">
                 <app-new-box [boxI]="box" (updateEvent)="ngOnInit($event)"></app-new-box>
-                <!-- <app-new-box [boxTag]="box.boxTag" (updateEvent)="ngOnInit($event)"></app-new-box> -->
-
             </div>
-        <div style="background-color:sandybrown; height: 150px; " class="ml-2 col-3 col-md-3 col-lg-2 mt-2">
+        <div id="add-box" class="ml-2 col-3 col-md-3 col-lg-2 mt-2">
             <div class="form-group">
-                <button type="button" class="btn btn-success btn-lg" style="margin: 54px" (click)="addTag()">
+                <button type="button" id='add-button' class="btn btn-success btn-lg" (click)="addTag()">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
             </div>
